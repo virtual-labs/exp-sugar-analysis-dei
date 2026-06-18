@@ -18,9 +18,9 @@
 
 - Plates were evaluated by densitometry at 520 nm with a Camag Scanner 3 for quantification.
 
-  ## Observation
+## Observation
 
-  The chromatographic profile of the sample was simple, showing good separation of cane sugar and lactose. Peak of cane sugar and lactose were identified using the solvent system [n-Butanol: Acetic acid: Water:: 2:1:1 (v/v)]. Cane sugar and lactose are not UV active, so the plates were derivatized using aniline diphenylamine phosphoric acid (Fig. 1). The R<sub>f</sub> value of cane sugar and lactose was found to be 0.52 and 0.43 ± 0.03 respectively and there was no overlap with any other analyses of the sample at 520 nm (Fig.2).
+The chromatographic profile of the sample was simple, showing good separation of cane sugar and lactose. Peak of cane sugar and lactose were identified using the solvent system [n-Butanol: Acetic acid: Water:: 2:1:1 (v/v)]. Cane sugar and lactose are not UV active, so the plates were derivatized using aniline diphenylamine phosphoric acid (Fig. 1). The R<sub>f</sub> value of cane sugar and lactose was found to be 0.52 and 0.43 ± 0.03 respectively and there was no overlap with any other analyses of the sample at 520 nm (Fig.2).
 
 <div align="center">
   <img src="images/obs_exp4_1.jpg" alt="obs_exp4_1" /><br/>
