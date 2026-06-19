@@ -1,39 +1,91 @@
 {
   "version": 2.0,
+  "quiz_title": "HPTLC Analysis of Sugars in Milk - Advanced Quiz",
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "num": 1,
+      "question": "Why is a derivatization step, such as using an aniline-diphenylamine-phosphoric acid reagent, necessary when analyzing sugars like lactose and sucrose by HPTLC?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "To make the sugars soluble in the mobile phase.",
+        "b": "To separate the sugars from milk proteins.",
+        "c": "Because the sugars are not naturally visible under UV or white light.",
+        "d": "To convert sucrose into glucose and fructose for easier detection."
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Incorrect. Sugars are typically soluble in the polar mobile phases used in HPTLC.",
+        "b": "Incorrect. Protein removal is typically done during sample preparation, not by the derivatization reagent.",
+        "c": "Correct. Most common sugars do not absorb UV light or are colorless, so they must be chemically converted into colored or fluorescent compounds after separation to be detected and quantified by densitometry [citation:3].",
+        "d": "Incorrect. The derivatization reagent reacts with the sugars to form colored compounds but does not hydrolyze sucrose into its monosaccharide components."
       },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
+      "correctAnswer": "c"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "num": 2,
+      "question": "A key advantage of using High-Performance Thin-Layer Chromatography (HPTLC) for analyzing sugars in dairy products, as compared to other methods, is:",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Its ability to analyze samples with complex matrices like milk with minimal preparation.",
+        "b": "Its significantly lower cost than all other analytical techniques.",
+        "c": "Its ability to analyze samples in real-time without any sample preparation.",
+        "d": "Its superior sensitivity and ability to detect single molecules of sugar."
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Correct. HPTLC is well-suited for analyzing samples with complex matrices such as milk. Often, only simple steps like centrifugation and dilution are required before applying the sample to the plate [citation:3].",
+        "b": "Incorrect. While HPTLC is a cost-effective technique, other methods like simple enzymatic tests can be less expensive [citation:3].",
+        "c": "Incorrect. All analytical methods require some form of sample preparation.",
+        "d": "Incorrect. While HPTLC can be sensitive, its detection limits are at the nanogram level, not single molecules [citation:2]."
       },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
+      "correctAnswer": "a"
+    },
+    {
+      "num": 3,
+      "question": "A validated HPTLC method for honey analysis achieved excellent sensitivity. What was the reported Limit of Detection (LOD) for glucose?",
+      "answers": {
+        "a": "100.00 ng",
+        "b": "33.00 ng",
+        "c": "66.62 ng",
+        "d": "21.17 ng"
+      },
+      "explanations": {
+        "a": "Incorrect. 100.00 ng is the Limit of Quantification (LOQ) for glucose, not the LOD.",
+        "b": "Correct. The study reported a Limit of Detection (LOD) of 33.00 ng for glucose [citation:2].",
+        "c": "Incorrect. 66.62 ng is the Limit of Quantification (LOQ) for fructose.",
+        "d": "Incorrect. 21.17 ng is the Limit of Detection (LOD) for sucrose."
+      },
+      "correctAnswer": "b"
+    },
+    {
+      "num": 4,
+      "question": "In quantitative HPTLC, how is the amount of a specific sugar (e.g., lactose) in a sample typically determined after the plate has been developed and derivatized?",
+      "answers": {
+        "a": "By weighing the scraped-off silica gel containing the sugar spot.",
+        "b": "By visually comparing the size and color intensity of the sample spot against standard spots.",
+        "c": "By using a densitometer to scan the plate and measure the absorbance of the colored spots.",
+        "d": "By measuring the distance the sugar spot traveled on the plate."
+      },
+      "explanations": {
+        "a": "Incorrect. This is an older, less precise method. Modern HPTLC uses scanning densitometry.",
+        "b": "Incorrect. Visual comparison is subjective and not suitable for accurate quantitative analysis.",
+        "c": "Correct. Densitometers measure the intensity of light absorbed by or reflected from the spots on the plate, allowing for precise quantification. The instrument creates a calibration curve using standards, which is then used to determine the concentration in the sample [citation:3][citation:4].",
+        "d": "Incorrect. The distance a spot travels (Rf value) is used for identification, not quantification."
+      },
+      "correctAnswer": "c"
+    },
+    {
+      "num": 5,
+      "question": "According to official Chinese standards (GB 5413.5-2010), what is a common method for determining lactose and sucrose in milk products besides HPTLC?",
+      "answers": {
+        "a": "Refractometry",
+        "b": "High-Performance Liquid Chromatography (HPLC)",
+        "c": "Mass Spectrometry (MS)",
+        "d": "Polari"
+      },
+      "explanations": {
+        "a": "Incorrect. Refractometry is not a primary standard method for the quantitative analysis of individual sugars in complex mixtures.",
+        "b": "Correct. The national food safety standard for infant foods and milk products (GB 5413.5-2010) lists High-Performance Liquid Chromatography (HPLC) as the primary method (Method 1) for determining lactose and sucrose [citation:8].",
+        "c": "Incorrect. While MS can be coupled with techniques like TLC or HPLC, it is not listed as the primary method in this particular standard.",
+        "d": "Incorrect. Polarimetry is an older technique that measures total optical activity and is not specific for individual sugars in a mixture."
+      },
+      "correctAnswer": "b"
     }
   ]
 }
