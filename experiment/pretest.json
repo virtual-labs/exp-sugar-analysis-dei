@@ -1,39 +1,91 @@
 {
   "version": 2.0,
+  "quiz_title": "Lactose and Sugars Quiz",
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      
+      "question": "1. Lactose on hydrolysis yields:",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Glucose and Galactose",
+        "b": "Glucose and Fructose",
+        "c": "Sucrose and Glucose",
+        "d": "Fructose"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Correct. Lactose (milk sugar) is a disaccharide composed of glucose and galactose linked by a β-1,4-glycosidic bond. On hydrolysis, it yields one molecule each of glucose and galactose.",
+        "b": "Incorrect. Glucose and fructose are products of sucrose hydrolysis, not lactose.",
+        "c": "Incorrect. Sucrose and glucose is not a product of lactose hydrolysis.",
+        "d": "Incorrect. Fructose alone is not produced from lactose hydrolysis."
       },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
+      "correctAnswer": "a"
     },
     {
-      "question": "This is a Sample Question 2?",
+     
+      "question": "2.The sweetest of all sugars is:",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Glucose",
+        "b": "Lactose",
+        "c": "Fructose",
+        "d": "Sucrose"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Incorrect. Glucose has a sweetness index of about 75 (on a scale where sucrose = 100).",
+        "b": "Incorrect. Lactose is less sweet, with a sweetness index of about 16.",
+        "c": "Correct. Fructose is the sweetest naturally occurring sugar, with a sweetness index of about 173 (on a scale where sucrose = 100).",
+        "d": "Incorrect. Sucrose has a sweetness index of 100 but is not the sweetest."
       },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
+      "correctAnswer": "c"
+    },
+    {
+      
+      "question": "3. Which of the following reduces Tollen's reagent:",
+      "answers": {
+        "a": "Cane sugar",
+        "b": "Starch",
+        "c": "Glucose",
+        "d": "None of the above"
+      },
+      "explanations": {
+        "a": "Incorrect. Cane sugar (sucrose) is a non-reducing sugar and does not reduce Tollen's reagent.",
+        "b": "Incorrect. Starch is a polysaccharide that does not reduce Tollen's reagent.",
+        "c": "Correct. Glucose is a reducing sugar with a free aldehyde group that can reduce Tollen's reagent (ammoniacal silver nitrate) to metallic silver.",
+        "d": "Incorrect because glucose does reduce Tollen's reagent."
+      },
+      "correctAnswer": "c"
+    },
+    {
+      
+      "question": "4. Lactose has a chemical formula:",
+      "answers": {
+        "a": "C₆H₁₂O₆",
+        "b": "C₁₂H₂₂O₁₁",
+        "c": "C₁₈H₃₂O₁₆",
+        "d": "None of these"
+      },
+      "explanations": {
+        "a": "Incorrect. C₆H₁₂O₆ is the formula for monosaccharides like glucose and fructose.",
+        "b": "Correct. Lactose is a disaccharide with the formula C₁₂H₂₂O₁₁ (same as sucrose and maltose).",
+        "c": "Incorrect. C₁₈H₃₂O₁₆ is the formula for trisaccharides like raffinose.",
+        "d": "Incorrect because C₁₂H₂₂O₁₁ is the correct formula."
+      },
+      "correctAnswer": "b"
+    },
+    {
+    
+      "question": "5. The ability to metabolize lactose depends on an intestinal enzyme called",
+      "answers": {
+        "a": "Amylase",
+        "b": "Protease",
+        "c": "Lipase",
+        "d": "Lactase"
+      },
+      "explanations": {
+        "a": "Incorrect. Amylase breaks down starch and glycogen into simpler sugars.",
+        "b": "Incorrect. Protease breaks down proteins into amino acids.",
+        "c": "Incorrect. Lipase breaks down fats (lipids) into fatty acids and glycerol.",
+        "d": "Correct. Lactase is the enzyme that breaks down lactose into glucose and galactose. Lactose intolerance occurs due to deficiency of this enzyme."
+      },
+      "correctAnswer": "d"
     }
   ]
 }
