@@ -1,4 +1,4 @@
-## Procedure
+### Procedure
 
 - A stock solution (0.1 mg/ml) of standard cane sugar and lactose was prepared in water: methanol (1:9) and sonicated for 10 minutes over an ultrasonic bath.
 
@@ -18,7 +18,7 @@
 
 - Plates were evaluated by densitometry at 520 nm with a Camag Scanner 3 for quantification.
 
-## Observation
+### Observation
 
 The chromatographic profile of the sample was simple, showing good separation of cane sugar and lactose. Peak of cane sugar and lactose were identified using the solvent system [n-Butanol: Acetic acid: Water:: 2:1:1 (v/v)]. Cane sugar and lactose are not UV active, so the plates were derivatized using aniline diphenylamine phosphoric acid (Fig. 1). The R<sub>f</sub> value of cane sugar and lactose was found to be 0.52 and 0.43 ± 0.03 respectively and there was no overlap with any other analyses of the sample at 520 nm (Fig.2).
 
