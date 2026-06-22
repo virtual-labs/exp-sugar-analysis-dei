@@ -6,89 +6,208 @@
 <title>Simulation</title>
 
 <style>
-body{
-    font-family: "Times New Roman", serif;
-    background:#f2f2f2;
+    body{
+    margin:0;
+    padding:20px;
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(135deg,#dbeafe,#f0f9ff);
 }
 
 .container{
-    width:800px;
-    margin:40px auto;
+    max-width:1100px;
+    margin:auto;
     background:#fff;
     padding:40px;
-    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+/* Headings */
+
+h1{
+    text-align:center;
+    color:#0f172a;
+    border-bottom:3px solid #2563eb;
+    padding-bottom:15px;
+    margin-bottom:35px;
+}
+
+/* Video */
+
+.video-section{
+    width:70%;
+    margin:0 auto 50px auto;
+    background:#fff;
+    padding:20px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.video-section video{
+    width:100%;
+    border-radius:15px;
+    display:block;
+}
+
+/* Info */
+
+.row:first-of-type{
+    background:#f8fafc;
+    padding:15px 20px;
+    border-radius:12px;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
 }
 
 .row{
-    margin:20px 0;
+    margin:25px 0;
 }
 
 label{
     display:inline-block;
     width:180px;
+    font-size:18px;
+    font-weight:600;
+    color:#1e293b;
 }
+
+/* Select */
+
+select{
+    width:450px;
+    padding:12px;
+    border:2px solid #cbd5e1;
+    border-radius:10px;
+    background:#f8fafc;
+    font-size:15px;
+}
+
+select:focus{
+    outline:none;
+    border-color:#2563eb;
+}
+
+/* Button */
 
 button{
     margin-top:15px;
-    padding:4px 12px;
+    padding:12px 30px;
+    border:none;
+    border-radius:10px;
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+    color:white;
+    font-size:16px;
+    font-weight:600;
     cursor:pointer;
+    transition:.3s;
 }
 
-.result{
-    margin-top:30px;
+button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 5px 15px rgba(37,99,235,.4);
 }
+
+
+
+
+
+input[type="text"]{
+    width:80px;
+    padding:8px;
+    border:2px solid #cbd5e1;
+    border-radius:8px;
+    text-align:center;
+    font-weight:bold;
+}
+
+/* Note */
+
+
+
+/* Explanation */
 
 .explanation{
     display:none;
-    margin-top:80px;
+    margin-top:60px;
+    background:#eff6ff;
+    padding:30px;
+    border-radius:15px;
+    border-left:8px solid #2563eb;
 }
 
 .explanation h2{
-    margin-bottom:30px;
+    color:#1e40af;
+    margin-top:0;
+    font-size:32px;
 }
 
 .explanation p{
-    line-height:1.7;
+    line-height:1.8;
+    color:#334155;
+    font-size:17px;
     text-align:justify;
 }
 
-.video-section{
+/* Responsive */
+
+@media(max-width:768px){
+
+    .container{
+        padding:20px;
+    }
+
+    .video-section{
+        width:95%;
+    }
+
+    select{
+        width:100%;
+    }
+
+    label{
+        display:block;
+        margin-bottom:10px;
+    }
+
+   
+}
+
+.rf-section{
+    display:flex;
+    gap:30px;
+    margin-top:40px;
+    flex-wrap:wrap;
+}
+
+.rf-box{
+    flex:1;
+    min-width:350px;
+    background:#f8fafc;
+    padding:25px;
+    border-radius:15px;
+    border-left:6px solid #2563eb;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+}
+
+.rf-box h3{
+    margin-top:0;
+    color:#1e40af;
+}
+
+.rf-box p{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:18px;
+}
+
+.rf-box input{
+    width:120px;
+    padding:8px;
+    border:2px solid #cbd5e1;
+    border-radius:8px;
+    background:white;
+    font-weight:bold;
     text-align:center;
-    margin-bottom:40px;
-}
-
-.video-section video{
-    max-width:100%;
-    border:1px solid #ccc;
-}
-
-table {
-    border-collapse: collapse;
-}
-
-td {
-    padding: 5px 10px;
-}
-
-.col td {
-    padding: 8px 10px;
-}
-
-input[type="text"] {
-    border: 1px solid #ccc;
-    padding: 4px 8px;
-    width: 60px;
-}
-
-select {
-    padding: 4px 8px;
-    min-width: 250px;
-}
-
-#submit {
-    margin-top: 10px;
-    padding: 4px 20px;
-    cursor: pointer;
 }
 </style>
 </head>
@@ -126,25 +245,33 @@ select {
         <button onclick="setVisibility()">Submit</button>
     </div>
 
-    <div class="result">
-        <table>
-            <tr>
-                <td style="width:200px;"><strong>Optimum Rf:</strong></td>
-                <td><strong>Simulation Rf:</strong></td>
-            </tr>
-            <tr>
-                <td>Lactose: 0.43</td>
-                <td>Lactose: <input type="text" id="rfLactose" readonly></td>
-            </tr>
-            <tr>
-                <td>Cane Sugar: 0.52</td>
-                <td>Cane Sugar: <input type="text" id="rfSugar" readonly></td>
-            </tr>
-        </table>
+    <div class="rf-section">
 
-        <p style="margin-top:20px;"><strong>RF VALUE IS DEPENDENT ON POLARITY OF SOLVENT SYSTEM</strong></p>
-    </div>
+<div class="rf-box">
+<h3>Optimum Rf:</h3>
 
+<p>Lactose:  &nbsp;&nbsp;0.43</p>
+<p>Cane Sugar:  &nbsp;&nbsp;0.52</p>
+
+</div>
+
+<div class="rf-box">
+<h3>Simulation Rf:</h3>
+
+<p>
+    Lactose: <input type="text" id="rfLactose" readonly>
+
+</p>
+
+<p>
+Cane Sugar: <input type="text" id="rfSugar" readonly>
+</p>
+
+
+
+</div>
+
+</div>
     <!-- Hidden initially -->
     <div class="explanation" id="explanation">
         <h2>EXPLANATION:</h2>
@@ -194,3 +321,5 @@ function setVisibility() {
 
 </body>
 </html>
+
+
