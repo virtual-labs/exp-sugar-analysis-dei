@@ -1,4 +1,4 @@
-### Reagents List
+## Reagents List
 
 - Cane sugar standard  
 - Lactose standard
@@ -6,7 +6,7 @@
 - Acetic acid
 - Aniline diphenylamine phosphoric acid
 
-### Theory
+## Theory
 
 India has been called the land of *Annapurna*. Food, milk and waters are not only the elixir of life but they are worshiped as God. In spite of this fact food adulteration is present in our society to a great extent. In India, normally the adulteration in edibles is done either for financial gain or due to carelessness and lack in proper hygienic condition of processing, storing, transportation and marketing. This ultimately results that the consumer is either cheated or often become victim of diseases.
 
