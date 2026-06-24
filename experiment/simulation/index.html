@@ -4,289 +4,457 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Simulation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-    body{
-    margin:0;
-    padding:20px;
-    font-family:'Segoe UI',sans-serif;
-    background:linear-gradient(135deg,#dbeafe,#f0f9ff);
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.container{
-    max-width:1100px;
-    margin:auto;
-    background:#fff;
-    padding:40px;
-    border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,.15);
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+    color: #102a43;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
 }
 
-/* Headings */
-
-h1{
-    text-align:center;
-    color:#0f172a;
-    border-bottom:3px solid #2563eb;
-    padding-bottom:15px;
-    margin-bottom:35px;
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    flex-shrink: 0;
 }
 
-/* Video */
-
-.video-section{
-    width:70%;
-    margin:0 auto 50px auto;
-    background:#fff;
-    padding:20px;
-    border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,.15);
+.header h1 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #102a43;
+    letter-spacing: -0.5px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 8px;
 }
 
-.video-section video{
-    width:100%;
-    border-radius:15px;
-    display:block;
+.header h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    width: 50%;
+    height: 3px;
+    background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+    border-radius: 2px;
 }
 
-/* Info */
-
-.row:first-of-type{
-    background:#f8fafc;
-    padding:15px 20px;
-    border-radius:12px;
-    box-shadow:0 2px 8px rgba(0,0,0,.08);
+/* Main Layout */
+.app-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 20px;
+    flex-grow: 1;
+    min-height: 0; /* Ensures inner scrolling works correctly */
 }
 
-.row{
-    margin:25px 0;
+/* Panel Common Styles */
+.panel {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    border: 1px solid rgba(226, 232, 240, 0.8);
 }
 
-label{
-    display:inline-block;
-    width:180px;
-    font-size:18px;
-    font-weight:600;
-    color:#1e293b;
+.panel h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #334e68;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-/* Select */
-
-select{
-    width:450px;
-    padding:12px;
-    border:2px solid #cbd5e1;
-    border-radius:10px;
-    background:#f8fafc;
-    font-size:15px;
+/* Left Panel (Video) */
+.left-panel {
+    align-items: stretch;
 }
 
-select:focus{
-    outline:none;
-    border-color:#2563eb;
+.video-container {
+    flex-grow: 1;
+    min-height: 0;
+    background: #0f172a;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.5);
 }
 
-/* Button */
-
-button{
-    margin-top:15px;
-    padding:12px 30px;
-    border:none;
-    border-radius:10px;
-    background:linear-gradient(135deg,#2563eb,#1d4ed8);
-    color:white;
-    font-size:16px;
-    font-weight:600;
-    cursor:pointer;
-    transition:.3s;
+.video-container video {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
 }
 
-button:hover{
-    transform:translateY(-2px);
-    box-shadow:0 5px 15px rgba(37,99,235,.4);
+/* Right Panel (Simulation) */
+.right-panel {
+    /* container style inherited */
 }
 
-
-
-
-
-input[type="text"]{
-    width:80px;
-    padding:8px;
-    border:2px solid #cbd5e1;
-    border-radius:8px;
-    text-align:center;
-    font-weight:bold;
+.scrollable-content {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 8px;
 }
 
-/* Note */
-
-
-
-/* Explanation */
-
-.explanation{
-    display:none;
-    margin-top:60px;
-    background:#eff6ff;
-    padding:30px;
-    border-radius:15px;
-    border-left:8px solid #2563eb;
+/* Custom Scrollbar */
+.scrollable-content::-webkit-scrollbar {
+    width: 6px;
 }
 
-.explanation h2{
-    color:#1e40af;
-    margin-top:0;
-    font-size:32px;
+.scrollable-content::-webkit-scrollbar-track {
+    background: transparent;
 }
 
-.explanation p{
-    line-height:1.8;
-    color:#334155;
-    font-size:17px;
-    text-align:justify;
+.scrollable-content::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1;
+    border-radius: 3px;
 }
 
-/* Responsive */
+.scrollable-content::-webkit-scrollbar-thumb:hover {
+    background-color: #94a3b8;
+}
 
-@media(max-width:768px){
+/* Metadata Badges */
+.meta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+}
 
-    .container{
-        padding:20px;
+.meta-badge {
+    background: #f0f4f8;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #486581;
+    border-left: 4px solid #3b82f6;
+}
+
+.meta-badge strong {
+    color: #102a43;
+    display: block;
+    margin-bottom: 2px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Control Row */
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.control-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #102a43;
+}
+
+.select-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.control-group select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    background: #f8fafc;
+    font-size: 15px;
+    font-family: inherit;
+    color: #334e68;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.control-group select:focus {
+    outline: none;
+    border-color: #3b82f6;
+    background-color: #ffffff;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.2);
+}
+
+.submit-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+/* Results Display */
+.result-table-wrapper {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 16px;
+    border: 1px solid #e2e8f0;
+    margin-bottom: 16px;
+    margin-top: 20px;
+}
+
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.results-table th {
+    text-align: left;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #627d98;
+    padding: 8px 12px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.results-table td {
+    padding: 12px;
+    border-bottom: 1px solid #f1f5f9;
+    color: #102a43;
+    font-size: 14px;
+}
+
+.results-table tr:last-child td {
+    border-bottom: none;
+}
+
+.results-table td strong {
+    color: #102a43;
+    font-weight: 600;
+}
+
+.results-table input {
+    width: 80px;
+    padding: 6px 8px;
+    border: 2px solid #cbd5e1;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 700;
+    color: #102a43;
+    background: #ffffff;
+    outline: none;
+    font-family: inherit;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.results-table input:focus {
+    border-color: #3b82f6;
+}
+
+/* Polarity Callout / Footnote */
+.footnote {
+    background: #eff6ff;
+    border-left: 4px solid #3b82f6;
+    padding: 12px 16px;
+    border-radius: 0 8px 8px 0;
+    color: #1e40af;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* Explanation Section */
+.explanation-section {
+    display: none;
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #e2e8f0;
+    margin-top: 15px;
+}
+
+.explanation-section.show {
+    display: block;
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.explanation-section h3 {
+    color: #1e3a8a;
+    font-size: 15px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.explanation-section p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #475569;
+    margin-bottom: 12px;
+    text-align: justify;
+}
+
+.explanation-section p:last-child {
+    margin-bottom: 0;
+}
+
+/* Responsive (Mobile/Tablets) */
+@media (max-width: 900px) {
+    body {
+        height: auto;
+        overflow: auto;
+        padding: 10px;
     }
 
-    .video-section{
-        width:95%;
+    .app-layout {
+        grid-template-columns: 1fr;
+        height: auto;
     }
 
-    select{
-        width:100%;
+    .panel {
+        height: auto;
     }
 
-    label{
-        display:block;
-        margin-bottom:10px;
+    .video-container {
+        height: 280px;
     }
-
-   
-}
-
-.rf-section{
-    display:flex;
-    gap:30px;
-    margin-top:40px;
-    flex-wrap:wrap;
-}
-
-.rf-box{
-    flex:1;
-    min-width:350px;
-    background:#f8fafc;
-    padding:25px;
-    border-radius:15px;
-    border-left:6px solid #2563eb;
-    box-shadow:0 3px 10px rgba(0,0,0,.08);
-}
-
-.rf-box h3{
-    margin-top:0;
-    color:#1e40af;
-}
-
-.rf-box p{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    font-size:18px;
-}
-
-.rf-box input{
-    width:120px;
-    padding:8px;
-    border:2px solid #cbd5e1;
-    border-radius:8px;
-    background:white;
-    font-weight:bold;
-    text-align:center;
 }
 </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>Animation</h1>
-
-    <!-- Experiment Animation Video -->
-    <div class="video-section">
-        <video width="700" controls autoplay loop>
-            <source src="images/Final_Exp4.mp4" type="video/mp4">
-        </video>
-    </div>
-
-    <h1>Simulation</h1>
-
-    <div class="row">
-        <strong>Stationary Phase:</strong> Silica gel
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <strong>Saturation time:</strong> 15 minutes
-    </div>
-
-    <div class="row">
-        <label>Solvent System:</label>
-        <select name="one" id="one">
-            <option>None</option>
-            <option>n-Butanol: Acetic acid: Water:: 2:1:1 (v/v)</option>
-            <option>n-Butanol: Acetic acid: Water:: 2:1:1.5 (v/v)</option>
-            <option>n-Butanol: Acetic acid: Water:: 2:1:2.0 (v/v)</option>
-            <option>n-Butanol: Acetic acid: Water:: 2:1:0.5 (v/v)</option>
-            <option>n-Butanol: Acetic acid: Water:: 2:1:0.25 (v/v)</option>
-        </select>
-        <br>
-        <button onclick="setVisibility()">Submit</button>
-    </div>
-
-    <div class="rf-section">
-
-<div class="rf-box">
-<h3>Optimum Rf:</h3>
-
-<p>Lactose:  &nbsp;&nbsp;0.43</p>
-<p>Cane Sugar:  &nbsp;&nbsp;0.52</p>
-
+<div class="header">
+    <h1>Thin Layer Chromatography (TLC) Simulation</h1>
 </div>
 
-<div class="rf-box">
-<h3>Simulation Rf:</h3>
-
-<p>
-    Lactose: <input type="text" id="rfLactose" readonly>
-
-</p>
-
-<p>
-Cane Sugar: <input type="text" id="rfSugar" readonly>
-</p>
-
-
-
-</div>
-
-</div>
-    <!-- Hidden initially -->
-    <div class="explanation" id="explanation">
-        <h2>EXPLANATION:</h2>
-
-        <p>
-            The Rf value of the analyte increases and decreases with the rise and decrease of the polarity of the solvent system for the same stationary phase.
-        </p>
-        <p>
-            The solvent system is an organic solvent or mixture of different organic solvents. As the solvent system moves over the surface of the stationary phase, it transports the analyte over the particles of the stationary phase. Therefore, if a highly polar solvent is used, it will interact strongly with the surface of the stationary phase and will leave only few sites on the stationary phase free to bind with the analyte. The analyte will, therefore, move quickly over the stationary phase. Similarly, polar groups in the solvent can interact strongly with polar functionality in the analyte and prevent interaction of the analyte with the surface of the stationary phase. These effects lead to rapid movement of the analyte over the stationary phase.
-        </p>
-        <p>
-            The polarity of a solvent system to be used for chromatography is evaluated by examining the dielectric constant and dipole moment of the solvent. The larger these two numbers, the more polar is the solvent. In addition, the hydrogen bonding ability of the solvent is also considered.
-        </p>
+<div class="app-layout">
+    <!-- Left Column: Video Animation -->
+    <div class="panel left-panel">
+        <h2>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-video" style="color: #3b82f6;"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+            Experiment Animation
+        </h2>
+        <div class="video-container">
+            <video controls autoplay loop>
+                <source src="images/Final_Exp4.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
     </div>
 
+    <!-- Right Column: Simulation & Results -->
+    <div class="panel right-panel">
+        <h2>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sliders" style="color: #3b82f6;"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
+            Simulation Parameters
+        </h2>
+
+        <div class="scrollable-content">
+            <div class="meta-grid">
+                <div class="meta-badge">
+                    <strong>Stationary Phase</strong>
+                    Silica gel
+                </div>
+                <div class="meta-badge">
+                    <strong>Saturation Time</strong>
+                    15 minutes
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label for="one">Solvent System:</label>
+                <div class="select-wrapper">
+                    <select name="one" id="one">
+                        <option value="None">None</option>
+                        <option value="n-Butanol: Acetic acid: Water:: 2:1:1 (v/v)">n-Butanol: Acetic acid: Water:: 2:1:1 (v/v)</option>
+                        <option value="n-Butanol: Acetic acid: Water:: 2:1:1.5 (v/v)">n-Butanol: Acetic acid: Water:: 2:1:1.5 (v/v)</option>
+                        <option value="n-Butanol: Acetic acid: Water:: 2:1:2.0 (v/v)">n-Butanol: Acetic acid: Water:: 2:1:2.0 (v/v)</option>
+                        <option value="n-Butanol: Acetic acid: Water:: 2:1:0.5 (v/v)">n-Butanol: Acetic acid: Water:: 2:1:0.5 (v/v)</option>
+                        <option value="n-Butanol: Acetic acid: Water:: 2:1:0.25 (v/v)">n-Butanol: Acetic acid: Water:: 2:1:0.25 (v/v)</option>
+                    </select>
+                </div>
+                <button class="submit-btn" onclick="setVisibility()">Submit</button>
+            </div>
+
+            <div class="result-table-wrapper">
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>Optimum R<sub>f</sub> (reference)</th>
+                            <th>Simulation R<sub>f</sub></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Lactose: <strong>0.43</strong></td>
+                            <td>Lactose: <input type="text" id="rfLactose" readonly placeholder="—"></td>
+                        </tr>
+                        <tr>
+                            <td>Cane Sugar: <strong>0.52</strong></td>
+                            <td>Cane Sugar: <input type="text" id="rfSugar" readonly placeholder="—"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="footnote">⚡ R<sub>f</sub> VALUE DEPENDS ON POLARITY OF SOLVENT SYSTEM</div>
+            </div>
+
+            <!-- Explanation Section -->
+            <div class="explanation-section" id="explanation">
+                <h3>EXPLANATION:</h3>
+                <p>
+                    The Rf value of the analyte increases and decreases with the rise and decrease of the polarity of the solvent system for the same stationary phase.
+                </p>
+                <p>
+                    The solvent system is an organic solvent or mixture of different organic solvents. As the solvent system moves over the surface of the stationary phase, it transports the analyte over the particles of the stationary phase. Therefore, if a highly polar solvent is used, it will interact strongly with the surface of the stationary phase and will leave only few sites on the stationary phase free to bind with the analyte. The analyte will, therefore, move quickly over the stationary phase. Similarly, polar groups in the solvent can interact strongly with polar functionality in the analyte and prevent interaction of the analyte with the surface of the stationary phase. These effects lead to rapid movement of the analyte over the stationary phase.
+                </p>
+                <p>
+                    The polarity of a solvent system to be used for chromatography is evaluated by examining the dielectric constant and dipole moment of the solvent. The larger these two numbers, the more polar is the solvent. In addition, the hydrogen bonding ability of the solvent is also considered.
+                </p>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script>
@@ -309,10 +477,12 @@ function setVisibility() {
         rfLactose.value = rfValues[solvent].lactose;
         rfSugar.value = rfValues[solvent].sugar;
         explanation.style.display = "block";
+        explanation.classList.add("show");
     } else {
         rfLactose.value = "";
         rfSugar.value = "";
         explanation.style.display = "none";
+        explanation.classList.remove("show");
     }
 
     console.log("Selected solvent:", solvent);
@@ -321,5 +491,3 @@ function setVisibility() {
 
 </body>
 </html>
-
-
