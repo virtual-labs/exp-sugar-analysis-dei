@@ -3,8 +3,8 @@
   "quiz_title": "HPTLC Analysis of Sugars in Milk - Advanced Quiz",
   "questions": [
     {
-      "num": 1,
-      "question": "Why is a derivatization step, such as using an aniline-diphenylamine-phosphoric acid reagent, necessary when analyzing sugars like lactose and sucrose by HPTLC?",
+   
+      "question": "1. Why is a derivatization step, such as using an aniline-diphenylamine-phosphoric acid reagent, necessary when analyzing sugars like lactose and sucrose by HPTLC?",
       "answers": {
         "a": "To make the sugars soluble in the mobile phase.",
         "b": "To separate the sugars from milk proteins.",
@@ -20,8 +20,8 @@
       "correctAnswer": "c"
     },
     {
-      "num": 2,
-      "question": "A key advantage of using High-Performance Thin-Layer Chromatography (HPTLC) for analyzing sugars in dairy products, as compared to other methods, is:",
+     
+      "question": "2. A key advantage of using High-Performance Thin-Layer Chromatography (HPTLC) for analyzing sugars in dairy products, as compared to other methods, is-",
       "answers": {
         "a": "Its ability to analyze samples with complex matrices like milk with minimal preparation.",
         "b": "Its significantly lower cost than all other analytical techniques.",
@@ -37,8 +37,8 @@
       "correctAnswer": "a"
     },
     {
-      "num": 3,
-      "question": "A validated HPTLC method for honey analysis achieved excellent sensitivity. What was the reported Limit of Detection (LOD) for glucose?",
+    
+      "question": "3. A validated HPTLC method for honey analysis achieved excellent sensitivity. What was the reported Limit of Detection (LOD) for glucose?",
       "answers": {
         "a": "100.00 ng",
         "b": "33.00 ng",
@@ -54,8 +54,8 @@
       "correctAnswer": "b"
     },
     {
-      "num": 4,
-      "question": "In quantitative HPTLC, how is the amount of a specific sugar (e.g., lactose) in a sample typically determined after the plate has been developed and derivatized?",
+     
+      "question": "4. In quantitative HPTLC, how is the amount of a specific sugar (e.g., lactose) in a sample typically determined after the plate has been developed and derivatized?",
       "answers": {
         "a": "By weighing the scraped-off silica gel containing the sugar spot.",
         "b": "By visually comparing the size and color intensity of the sample spot against standard spots.",
@@ -71,8 +71,8 @@
       "correctAnswer": "c"
     },
     {
-      "num": 5,
-      "question": "According to official Chinese standards (GB 5413.5-2010), what is a common method for determining lactose and sucrose in milk products besides HPTLC?",
+      
+      "question": "5. According to official Chinese standards (GB 5413.5-2010), what is a common method for determining lactose and sucrose in milk products besides HPTLC?",
       "answers": {
         "a": "Refractometry",
         "b": "High-Performance Liquid Chromatography (HPLC)",

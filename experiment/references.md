@@ -1,4 +1,4 @@
-## References
+### References
 
 1. Sharma, R., Rajput, Y. S., Poonam, Dogra, G., & Tomar, S. K. (2009). Estimation of sugars in milk by HPLC and its application in detection of adulteration of milk with soymilk. *International Journal of Dairy Technology*, *62*(4).
 
